@@ -1,0 +1,1 @@
+issues2mail: bundle exec ruby issues2mail.rb
