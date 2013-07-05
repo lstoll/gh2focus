@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.5)
+    dotenv (0.7.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
     faraday_middleware (0.9.0)
@@ -34,6 +35,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   octokit (~> 1.25)
   pg (~> 0.15)
   pony (~> 1.5)
