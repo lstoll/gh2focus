@@ -28,18 +28,19 @@ GH = Octokit::Client.new(:login => ENV['GITHUB_USER'], :oauth_token => ENV['GITH
 
 ## Do it
 
-
 GH.issues.each do |issue|
   issue_id = "#{issue[:repository][:name]}/#{issue[:number]}"
   DB[:processed].where('issue = ?', issue_id).count
   unless DB[:processed].where('issue = ?', issue_id).count > 0
+    issue_repo  = issue[:repository]
     issue_title = issue[:title]
-    issue_body = issue[:body]
+    issue_body  = issue[:body]
+    issue_url   = issue[:url]
     puts "Sending mail for #{issue_title}"
     Pony.mail(:to => ENV['MAILDROP_ADDRESS'],
               :from => ENV['FROM_ADDRESS'],
-              :subject => issue_title,
-              :body => issue_body)
+              :subject => "[#{issue_repo}] #{issue_title}",
+              :body => "#{issue_body}\n\n#{issue_url}")
     DB[:processed].insert(:issue => issue_id)
   end
 end
