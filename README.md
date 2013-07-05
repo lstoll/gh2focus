@@ -1,7 +1,7 @@
 # GitHub issues to OmniFocus
 
 This is a little app that runs on Heroku and forwads assigned issues to the
-OmniFocus Mail Drop service
+[OmniFocus Mail Drop service](http://www.omnigroup.com/support/omnifocus-mail-drop)
 
 ## Config
 
