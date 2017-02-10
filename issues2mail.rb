@@ -24,7 +24,7 @@ Pony.options = {
   }
 }
 
-GH = Octokit::Client.new(:login => ENV['GITHUB_USER'], :oauth_token => ENV['GITHUB_TOKEN'])
+GH = Octokit::Client.new(:login => ENV['GITHUB_USER'], :access_token => ENV['GITHUB_TOKEN'])
 
 ## Do it
 
