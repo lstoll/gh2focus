@@ -28,7 +28,7 @@ This should do it
 
     heroku create <appname>
     heroku addons:add sendgrid:starter
-    heroku addons:add heroku-postgresql:dev
+    heroku addons:add heroku-postgresql:hobby-dev
     heroku addons:add scheduler:standard
     # Populate these of course
     heroku config:add GITHUB_USER= GITHUB_TOKEN= MAILDROP_ADDRESS= FROM_ADDRESS=
